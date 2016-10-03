@@ -17,9 +17,9 @@ class SmallSMILHandler(ContentHandler):
                           'textstream': ['src', 'region']}
 
     def startElement(self, name, attrs):
-    
+
         dicc = {}
-        
+
         if name in self.DiccAtrib:
             dicc = {'Tag': name}
             for atribute in self.DiccAtrib[name]:
