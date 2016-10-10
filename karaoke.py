@@ -9,6 +9,15 @@ from xml.sax.handler import ContentHandler
 from smallsmilhandler import SmallSMILHandler
 
 
+def dow_local(datos_smil):
+
+    for linea in datos_smil:
+        for atributo in linea:
+            if atributo == "src":
+                if linea[atributo].split[':'][0] == 'http://':
+                    urllib.request.urlretrieve(linea[atributo], linea[atributo].split('/')[-1])
+                    linea[atributo] = linea[atributo].split('/')[-1]
+
 def mifichero(datos_smil):
 
     for eti_dicc in datos_smil:
