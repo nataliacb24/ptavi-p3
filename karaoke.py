@@ -13,8 +13,7 @@ from xml.sax.handler import ContentHandler
 class KaraokeLocal():
 
     def __init__(self, fich):
-        #Inicializar
-
+        # Inicializar
         parser = make_parser()
         kHandler = smallsmilhandler.SmallSMILHandler()
         parser.setContentHandler(kHandler)
@@ -22,30 +21,27 @@ class KaraokeLocal():
         self.datos_smil = kHandler.get_tags()
 
     def __str__(self):
-        #Escribir datos
-
+        # Escribir datos
         linea = ""
         for eti_dicc in self.datos_smil:
             etiqueta = eti_dicc['Tag']
             linea += etiqueta
 
             for atributo in eti_dicc:
-                if atributo != 'Tag' :
+                if atributo != 'Tag':
                     value = eti_dicc[atributo]
                     linea += '\t' + atributo + "=" + value + '\n'
         return(linea)
 
     def do_json(self, fich):
-        #Convertir un fichero smil en uno json
-
+        # Convertir un fichero smil en uno json
         jsonfich = json.dumps(self.datos_smil)
         nombrefich = fich.split('.')[0] + '.json'
         with open(nombrefich, 'w') as fichjson:
             json.dump(jsonfich, fichjson)
 
     def do_local(self):
-        #Guardar en local
-
+        # Guardar en local
         for linea in self.datos_smil:
             for atributos in linea:
                 if linea[atributos][:7] == 'http://':
