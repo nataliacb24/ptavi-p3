@@ -10,7 +10,7 @@ class SmallSMILHandler(ContentHandler):
     def __init__(self):
 
         self.ListaDicc = []
-        self.DiccAtrib = {'root-layout': ['width', 'height', 
+        self.DiccAtrib = {'root-layout': ['width', 'height',
                           'background-color'],
                           'region': ['id', 'top', 'bottom', 'left', 'rigth'],
                           'img': ['src', 'region', 'begin', 'dur'],
