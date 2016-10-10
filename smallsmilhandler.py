@@ -28,7 +28,7 @@ class SmallSMILHandler(ContentHandler):
             self.ListaDicc.append(dicc)
 
     def get_tags(self):
-    # Metodo que me imprime la lista de diccionarios
+        # Metodo que me imprime la lista de diccionarios
         return self.ListaDicc
 
 
