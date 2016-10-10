@@ -10,7 +10,8 @@ class SmallSMILHandler(ContentHandler):
     def __init__(self):
 
         self.ListaDicc = []
-        self.DiccAtrib = {'root-layout': ['width', 'height', 'background-color'],
+        self.DiccAtrib = {'root-layout': ['width', 'height', 
+                          'background-color'],
                           'region': ['id', 'top', 'bottom', 'left', 'rigth'],
                           'img': ['src', 'region', 'begin', 'dur'],
                           'audio': ['src', 'begin', 'dur'],
@@ -23,11 +24,11 @@ class SmallSMILHandler(ContentHandler):
         if name in self.DiccAtrib:
             dicc = {'Tag': name}
             for atribute in self.DiccAtrib[name]:
-                dicc[atribute] = attrs.get(atribute,"")
+                dicc[atribute] = attrs.get(atribute, "")
             self.ListaDicc.append(dicc)
 
     def get_tags(self):
-    #Metodo que me imprime la lista de diccionarios
+    # Metodo que me imprime la lista de diccionarios
         return self.ListaDicc
 
 
